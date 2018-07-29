@@ -33,6 +33,7 @@ pipeline:
       - TENSORFLOW_BUILD_DIR=/tensorflow_dist
     commands:
       - export LD_LIBRARY_PATH=/usr/local/cuda/lib64/stubs:$${LD_LIBRARY_PATH}
+      - export LD_LIBRARY_PATH=/tensorflow_dist:$${LD_LIBRARY_PATH}
       - cd inference/go/
       - go get github.com/tensorflow/tensorflow/tensorflow/go
       - ./build.sh
